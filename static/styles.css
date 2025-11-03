@@ -1,0 +1,892 @@
+/* ==================== GLOBAL STYLES ==================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #007bff;
+  --primary-dark: #0056b3;
+  --secondary-color: #f8f9fa;
+  --text-color: #333;
+  --text-light: #666;
+  --border-color: #e0e0e0;
+  --white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* ==================== NAVIGATION ==================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.logo h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.logo p {
+  font-size: 12px;
+  color: var(--text-light);
+  letter-spacing: 1px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-menu a {
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-menu a.active {
+  color: var(--primary-color);
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* ==================== HERO SECTION ==================== */
+
+.hero {
+  margin-top: 70px;
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 22px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 14px 40px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ==================== SECTIONS ==================== */
+
+.overview,
+.featured-tours,
+.about-section,
+.team-section,
+.sustainability-section,
+.tours-section,
+.contact-section {
+  padding: 80px 0;
+}
+
+.overview {
+  background-color: var(--secondary-color);
+}
+
+.featured-tours,
+.team-section {
+  background-color: var(--white);
+}
+
+.about-section,
+.sustainability-section {
+  background-color: var(--secondary-color);
+}
+
+.tours-section,
+.contact-section {
+  background-color: var(--white);
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.overview > .container > p,
+.about-section > .container > p {
+  font-size: 16px;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* ==================== TOURS GRID ==================== */
+
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.tour-card {
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tour-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tour-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tour-card h3 {
+  padding: 20px 20px 10px;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.tour-card p {
+  padding: 0 20px;
+  color: var(--text-light);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.tour-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 15px;
+  align-items: center;
+}
+
+.duration,
+.price {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.duration {
+  color: var(--text-light);
+}
+
+.price {
+  color: var(--primary-color);
+  font-size: 18px;
+}
+
+.inquire-button {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 0 20px 20px;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.inquire-button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ==================== PAGE HEADER ==================== */
+
+.page-header {
+  margin-top: 70px;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: var(--white);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.page-header p {
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+/* ==================== FULL TOURS LISTING ==================== */
+
+.tours-grid-full {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
+
+.tour-full {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.tour-full:nth-child(even) {
+  direction: rtl;
+}
+
+.tour-full:nth-child(even) .tour-info {
+  direction: ltr;
+}
+
+.tour-full img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tour-info h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.tour-info p {
+  margin-bottom: 12px;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.tour-info ul {
+  list-style-position: inside;
+  margin-bottom: 25px;
+  color: var(--text-light);
+}
+
+.tour-info li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* ==================== TEAM SECTION ==================== */
+
+.team-intro {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-light);
+  margin-bottom: 50px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.team-member {
+  text-align: center;
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid var(--primary-color);
+}
+
+.team-member h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.team-member .role {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.team-member p {
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ==================== MISSION AND SUSTAINABILITY ==================== */
+
+.mission-list {
+  list-style: none;
+  margin: 20px 0 40px;
+}
+
+.mission-list li {
+  padding: 12px 0;
+  padding-left: 30px;
+  position: relative;
+  color: var(--text-light);
+}
+
+.mission-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.sustainability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.sustainability-item {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sustainability-item h4 {
+  color: var(--primary-color);
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.sustainability-item p {
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ==================== CONTACT SECTION ==================== */
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.contact-form-wrapper,
+.contact-info-wrapper {
+  background-color: var(--secondary-color);
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.contact-form-wrapper h2,
+.contact-info-wrapper h2 {
+  text-align: left;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: #dc3545;
+}
+
+.submit-button {
+  padding: 14px 30px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-message {
+  padding: 12px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+}
+
+.form-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  display: block;
+}
+
+.form-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  display: block;
+}
+
+.contact-info,
+.business-hours {
+  margin-bottom: 40px;
+}
+
+.contact-info h3,
+.business-hours h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.contact-info p,
+.business-hours p {
+  margin-bottom: 10px;
+  color: var(--text-light);
+}
+
+.contact-info a {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.map-container {
+  margin-top: 40px;
+}
+
+.map-container h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.map-container iframe {
+  border-radius: 8px;
+}
+
+/* ==================== FOOTER ==================== */
+
+.footer {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  padding: 50px 0 20px;
+  margin-top: 80px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-section h4 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--white);
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.footer-section p {
+  color: #b0b0b0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #b0b0b0;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--primary-color);
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-links a {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--white);
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-menu.active {
+    max-height: 300px;
+  }
+
+  .nav-menu li {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 15px 20px;
+  }
+
+  .nav-menu a::after {
+    display: none;
+  }
+
+  .hero {
+    height: 400px;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  .tour-full {
+    grid-template-columns: 1fr;
+  }
+
+  .tour-full:nth-child(even) {
+    direction: ltr;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .overview,
+  .featured-tours,
+  .about-section,
+  .team-section,
+  .sustainability-section,
+  .tours-section,
+  .contact-section {
+    padding: 50px 0;
+  }
+
+  .page-header {
+    padding: 40px 0;
+  }
+
+  .page-header h1 {
+    font-size: 32px;
+  }
+
+  .page-header p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .tours-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    height: 300px;
+  }
+
+  .tour-info ul {
+    margin-left: 10px;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .page-header p {
+    font-size: 14px;
+  }
+
+  .contact-form-wrapper,
+  .contact-info-wrapper {
+    padding: 20px;
+  }
+
+  .contact-form-wrapper h2,
+  .contact-info-wrapper h2 {
+    font-size: 24px;
+  }
+
+  .footer-content {
+    gap: 30px;
+  }
+}

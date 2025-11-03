@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Risevale Kenya Tours. Get in touch to book your safari adventure in Kenya.">
+    <meta name="keywords" content="contact us, inquire safari, Kenya tour bookings">
+    <title>Contact Us - Risevale Kenya Tours</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href=static/styles.css>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Risevale</h1>
+                <p>Kenya Tours</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tours.html">Safari Tours</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Updated header for Kenya safari tour inquiries -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Plan Your Kenyan Safari</h1>
+            <p>Get in touch with our team to book your unforgettable wildlife adventure</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h2>Send us a Message</h2>
+                    <form id="inquiryForm" class="inquiry-form" novalidate>
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tour">Safari Tour Interested In *</label>
+                            <!-- Updated tour options to reflect Kenya safaris -->
+                            <select id="tour" name="tour" required>
+                                <option value="">-- Select a Safari Tour --</option>
+                                <option value="Masai Mara Big Five Safari">Masai Mara Big Five Safari - $2,499</option>
+                                <option value="Amboseli Elephant Paradise">Amboseli Elephant Paradise - $1,899</option>
+                                <option value="Maasai Cultural Immersion">Maasai Cultural Immersion - $1,599</option>
+                                <option value="Lake Nakuru Flamingo Discovery">Lake Nakuru Flamingo Discovery - $999</option>
+                                <option value="Mount Kenya Adventure Expedition">Mount Kenya Adventure Expedition - $2,199</option>
+                                <option value="Mombasa Beach & Coral Reef Experience">Mombasa Beach & Coral Reef Experience - $1,299</option>
+                                <option value="Tsavo Red Dust Safari Adventure">Tsavo Red Dust Safari Adventure - $1,699</option>
+                                <option value="Lake Victoria Cultural & Wildlife Tour">Lake Victoria Cultural & Wildlife Tour - $1,899</option>
+                                <option value="General Safari Inquiry">General Safari Inquiry</option>
+                            </select>
+                            <span class="error-message" id="tourError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+
+                        <button type="submit" class="submit-button">Send Inquiry</button>
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <!-- Updated contact information to reflect Kenya-based headquarters -->
+                <div class="contact-info-wrapper">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <p><strong>Email:</strong> <a href="mailto:info@risevalekenyas.com">info@risevalekenyas.com</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+254-20-3986500">+254 (20) 398-6500</a></p>
+                        <p><strong>Address:</strong> Nairobi Office - Safari House, Kenyatta Avenue, Nairobi 00100, Kenya</p>
+                    </div>
+
+                    <div class="business-hours">
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM (EAT)</p>
+                        <p>Saturday: 9:00 AM - 2:00 PM (EAT)</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="map-container">
+                        <h3>Our Nairobi Office Location</h3>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8179911045507!2d36.8217938!3d-1.2920659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10b5e7c8f9a9%3A0x1234567890abcdef!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1700000000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Risevale Kenya Tours Office in Nairobi"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Risevale Kenya Tours</h4>
+                    <p>&copy; 2025 Risevale Travel and Tours. All rights reserved.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tours.html">Safari Tours</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
