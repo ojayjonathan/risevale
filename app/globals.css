@@ -1,0 +1,223 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Light mode - white background with dark text */
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --primary: #543609;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #1a1a1a;
+  --muted: #f0f0f0;
+  --muted-foreground: #666666;
+  --accent: #f6c014;
+  --accent-foreground: #1a1a1a;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e5e5e5;
+  --input: #f5f5f5;
+  --ring: #543609;
+  --chart-1: #f5dba3;
+  --chart-2: #543609;
+  --chart-3: #ac7313;
+  --chart-4: #edaf18;
+  --chart-5: #d4a574;
+  --radius: 0.625rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1a1a1a;
+  --sidebar-primary: #543609;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f5dba3;
+  --sidebar-accent-foreground: #1a1a1a;
+  --sidebar-border: #e5e5e5;
+  --sidebar-ring: #543609;
+
+  /* Brand color CSS variables */
+  --color-gold: #f5dba3;
+  --color-gold-dark: #edaf18;
+  --color-brown: #543609;
+  --color-brown-light: #ac7313;
+}
+
+.dark {
+  --background: #0f0f0f;
+  --foreground: #f5f5f5;
+  --card: #1a1a1a;
+  --card-foreground: #f5f5f5;
+  --popover: #1a1a1a;
+  --popover-foreground: #f5f5f5;
+  --primary: #f5dba3;
+  --primary-foreground: #1a1a1a;
+  --secondary: #2a2a2a;
+  --secondary-foreground: #f5f5f5;
+  --muted: #3a3a3a;
+  --muted-foreground: #999999;
+  --accent: #f6c014;
+  --accent-foreground: #f5f5f5;
+  --destructive: #ef4444;
+  --destructive-foreground: #0f0f0f;
+  --border: #3a3a3a;
+  --input: #2a2a2a;
+  --ring: #f5dba3;
+  --chart-1: #f5dba3;
+  --chart-2: #edaf18;
+  --chart-3: #ac7313;
+  --chart-4: #d4a574;
+  --chart-5: #543609;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #f5f5f5;
+  --sidebar-primary: #f5dba3;
+  --sidebar-primary-foreground: #1a1a1a;
+  --sidebar-accent: #543609;
+  --sidebar-accent-foreground: #f5f5f5;
+  --sidebar-border: #3a3a3a;
+  --sidebar-ring: #f5dba3;
+}
+
+@theme inline {
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Improved button styling with proper contrast and spacing */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-colors;
+  background-color: var(--color-brown);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-brown-light);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-colors;
+  background-color: var(--color-gold);
+  color: var(--color-brown);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-gold-dark);
+  text-decoration: none;
+}
+
+/* Base text and container styles with proper contrast */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+.container-max {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.heading-large {
+  @apply font-serif text-4xl md:text-5xl font-bold mb-4;
+  color: var(--color-brown);
+}
+
+.heading-medium {
+  @apply font-serif text-3xl md:text-4xl font-bold;
+  color: var(--color-brown);
+}
+
+.heading-small {
+  @apply font-serif text-2xl md:text-3xl font-bold;
+  color: var(--color-brown);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.text-accent {
+  color: var(--color-brown);
+}
+
+.text-accent-light {
+  color: var(--color-gold-dark);
+}
+
+.text-accent-subtle {
+  color: var(--color-gold);
+}
+
+.accent-light {
+  background-color: var(--color-gold);
+}
+
+.accent-dark {
+  background-color: var(--color-brown);
+}
+
+/* Card styling with proper background and text contrast */
+.card {
+  @apply rounded-lg border border-border p-4;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.card:hover {
+  @apply shadow-lg transition-shadow;
+}
